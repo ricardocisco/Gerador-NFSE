@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador NFSE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            width: 35%;
+        }
+        h2 {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input, label{
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 2px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .nf-container {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #000;
+            background-color: #f0f0f0;
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+
+        <h2>Gerar Nota Fiscal</h2>
+
+        <!-- forms para a notafiscal -->
+        <form id="nfsForm">
+            <label for="valorVenda">Valor da Venda:</label>
+            <input type="number" id="valorVenda" placeholder="Insira o valor da venda ex: 2500" required>
+            <label for="itensVendidos">Itens Vendidos:</label>
+            <input type="text" id="itensVendidos" placeholder="Itens que foram vendidos ex: 10 caixas de canecas" required>
+            <label for="irpf">Porcentagem IRPF (%):</label>
+            <input type="number" id="irpf" placeholder="ex: 10 para 10%">
+            <label for="pis">Porcentagem PIS (%):</label>
+            <input type="number" id="pis" placeholder="ex: 10 para 10%">
+            <label for="cofins">Porcentagem COFINS (%):</label>
+            <input type="number" id="cofins" placeholder="ex: 10 para 10%">
+            <label for="inss">Porcentagem INSS (%):</label>
+            <input type="number" id="inss" placeholder="ex: 10 para 10%">
+            <label for="issqn">Porcentagem ISSQN (%):</label>
+            <input type="number" id="issqn" placeholder="ex: 10 para 10%">
+            <button type="submit">Gerar Nota Fiscal</button>
+          </form>
+        
+          <!-- Exibir a notafiscal -->
+          <div id="notaFiscal" class="nf-container" style="display:none;">
+            <h3>Nota Fiscal Gerada</h3>
+            <label for="nfValorVenda">Valor da Venda:</label>
+            <input type="text" id="nfValorVenda" readonly>
+            <label for="nfItensVendidos">Itens Vendidos:</label>
+            <input type="text" id="nfItensVendidos" readonly>
+            <label for="nfIRPF">IRPF (R$):</label>
+            <input type="text" id="nfIRPF" readonly>
+            <label for="nfPIS">PIS (R$):</label>
+            <input type="text" id="nfPIS" readonly>
+            <label for="nfCOFINS">COFINS (R$):</label>
+            <input type="text" id="nfCOFINS" readonly>
+            <label for="nfINSS">INSS (R$):</label>
+            <input type="text" id="nfINSS" readonly>
+            <label for="nfISSQN">ISSQN (R$):</label>
+            <input type="text" id="nfISSQN" readonly>
+            <label for="nfTotalImpostos">Total de Impostos (R$):</label>
+            <input type="text" id="nfTotalImpostos" readonly>
+            <label for="nfValorLiquido">Valor Líquido (R$):</label>
+            <input type="text" id="nfValorLiquido" readonly>
+          </div>
+    </div>
+
+      <script src="script.js"></script>
+</body>
+</html>
